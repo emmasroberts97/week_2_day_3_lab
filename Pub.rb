@@ -12,5 +12,9 @@ def increase_money(drink)
   @till += drink.price
 end
 
+def customer_buys_drink(customer, drink)
+  increase_money(drink)
+  customer.reduce_money(drink)
+end
 
 end
