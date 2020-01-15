@@ -17,7 +17,6 @@ def remove_drink_from_stock(drink_name)
   for drink in @stock
     if drink == drink_name
       @stock.delete_at(@stock.index(drink))
-      return @stock 
     end
   end
 end
