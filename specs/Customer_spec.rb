@@ -17,7 +17,7 @@ def setup()
 end
 
 
-def test_reduce_money
+def test_reduce_money()
   drink = Drink.new("Surfer on acid", 6, 25)
   @customer.reduce_money(drink)
   assert_equal(44, @customer.get_wallet)

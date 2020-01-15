@@ -9,7 +9,7 @@ class Customer
     @drunkenness = 0
   end
 
-  def get_wallet
+  def get_wallet()
     return @wallet
   end
 

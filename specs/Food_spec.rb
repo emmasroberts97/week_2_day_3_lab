@@ -12,3 +12,4 @@ Minitest::Reporters.use!
 Minitest::Reporters::SpecReporter.new
 
 class FoodTest < MiniTest::Test
+end 

@@ -5,3 +5,4 @@ Minitest::Reporters.use!
 Minitest::Reporters::SpecReporter.new
 
 class DrinkTest < MiniTest::Test
+end 
