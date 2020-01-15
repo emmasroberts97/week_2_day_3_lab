@@ -17,9 +17,11 @@ def setup()
   @drink1 = Drink.new("Surfer on acid", 6, 25)
   @drink2 = Drink.new("Cosmopolition", 8, 30)
 
-  @drinks = [@drink, @drink1, @drink2]
+  @drinks = [@drink, @drink, @drink, @drink1, @drink2]
 
-  @pub = Pub.new("Main Street Pub", @drinks)
+  @stock = @drinks
+
+  @pub = Pub.new("Main Street Pub", @drinks, @stock)
 
   @food1 = Food.new("Pizza", 5, 10)
   @food2 = Food.new("Garlic Bread", 3, 20)
@@ -36,6 +38,7 @@ def test_customer_buys_drink
   @pub.customer_buys_drink(customer, @drink2)
   assert_equal(8, @pub.till)
   assert_equal(17, customer.get_wallet)
+  assert_equal(4, @pub.stock_count)
 end
 
 def test_customer_buys_drink__age_denied
@@ -61,5 +64,13 @@ def test_customer_buys_food
   assert_equal(8, @pub.till)
 end
 
+def test_stock_count
+  assert_equal(5,@pub.stock_count)
+end
+
+def test_stock_value
+  value = @pub.stock_value
+  assert_equal(29, value)
+end
 
 end
